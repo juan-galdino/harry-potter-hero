@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'HarryP';
+  src: url('./fontes/HARRYP_.TTF') format('truetype');
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --cor-primaria: hsl(173, 100%, 50%);
+}
+body {
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+}
