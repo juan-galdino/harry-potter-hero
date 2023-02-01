@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'HarryP';
-  src: url('./fontes/HARRYP_.TTF') format('truetype');
+  src: url('./fontes/HARRYP__.TTF') format('truetype');
 }
 *,
 *::before,
@@ -15,4 +15,102 @@
 body {
   min-height: 100vh;
   font-family: 'Nunito', sans-serif;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: url('./imagens/header/hogwarts-celular.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: hsl(185, 97%, 15%);
+  color: hsl(0, 0%, 100%);
+  overflow: clip;
+}
+article {
+  max-width: 25rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+h1 {
+  font-family: 'HarryP', Times, sans-serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+}
+span {
+  color: var(--cor-primaria);
+}
+p {
+  font-size: 1.2rem;
+}
+a {
+  background-color: var(--cor-primaria);
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: hsl(0, 7%, 8%);
+  border-radius: 3.125rem;
+  transition: all ease 0.3s;
+  text-align: center;
+}
+a:hover,
+a:focus {
+  outline: none;
+  filter: brightness(1.03);
+  transform: scale(1.04);
+  box-shadow: 0 5px 15px var(--cor-primaria);
+}
+a:active {
+  filter: brightness(0.8);
+  box-shadow: inset 0px 0px 48px 18px var(--cor-primaria);
+  box-shadow: 0 5px 15px var(--cor-primaria);
+  transform: scale(1);
+}
+img {
+  display: block;
+  animation: mudandoTamanho 10s linear infinite;
+}
+@keyframes mudandoTamanho {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media screen and (min-width: 55em) {
+  header {
+    background-image: url('./imagens/header/hogwarts-desktop.webp');
+    flex-direction: row;
+    padding-inline-start: 4rem;
+  }
+  article {
+    text-align: start;
+  }
+  picture {
+    align-self: flex-end;
+  }
+}
+/* Para manter o padrão coluna em tablets como o Ipad PRO */
+@media screen and (min-height: 55em) {
+  header {
+    flex-direction: column;
+    min-height: 50vh;
+    padding-inline-start: 0;
+  }
+  article {
+    text-align: center;
+  }
+  picture {
+    align-self: center;
+  }
 }
