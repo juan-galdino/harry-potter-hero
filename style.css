@@ -10,52 +10,57 @@
   margin: 0;
 }
 :root {
-  --cor-primaria: hsl(173, 100%, 50%);
+  --cor-primaria: hsl(184, 100%, 50%);
 }
 body {
-  min-height: 100vh;
   font-family: 'Nunito', sans-serif;
 }
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   min-height: 100vh;
-  background-image: url('./imagens/header/hogwarts-celular.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url('./imagens/header/hogwarts-desktop.png');
   background-position: center;
-  background-color: hsl(185, 97%, 15%);
-  color: hsl(0, 0%, 100%);
+  background-size: cover;
+}
+section {
+  display: flex;
+  width: 100%;
+  /* align-items: center; */
+  background-color: hsla(0, 0%, 0%, 0.3);
+  position: relative;
   overflow: clip;
 }
 article {
-  max-width: 25rem;
-  padding: 3rem 1rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10rem;
+  padding-inline: clamp(0rem, 7vw, 8rem);
+  width: 50%;
+  color: hsl(0, 0%, 100%);
   gap: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 h1 {
   font-family: 'HarryP', Times, sans-serif;
   font-weight: 400;
-  font-size: 3.5rem;
+  font-size: clamp(3rem, 5vw, 4rem);
 }
 span {
   color: var(--cor-primaria);
 }
 p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.5;
 }
 a {
   background-color: var(--cor-primaria);
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
   text-decoration: none;
   color: hsl(0, 7%, 8%);
-  border-radius: 3.125rem;
+  border-radius: 0.8rem;
   transition: all ease 0.3s;
   text-align: center;
 }
@@ -72,9 +77,18 @@ a:active {
   box-shadow: 0 5px 15px var(--cor-primaria);
   transform: scale(1);
 }
+picture {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
 img {
-  display: block;
-  animation: mudandoTamanho 10s linear infinite;
+  position: absolute;
+  width: 75%;
+  right: 0;
+  /* animation: mudandoTamanho 10s linear infinite; */
 }
 @keyframes mudandoTamanho {
   0% {
@@ -87,21 +101,41 @@ img {
     transform: scale(1);
   }
 }
-@media screen and (min-width: 55em) {
+@media screen and (max-width: 1080px) {
   header {
-    background-image: url('./imagens/header/hogwarts-desktop.webp');
-    flex-direction: row;
-    padding-inline-start: 4rem;
+    min-height: auto;
   }
-  article {
-    text-align: start;
+  header section {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    flex-direction: column;
+    min-height: 100vh;
+    /* background-color: blueviolet; */
   }
+
+  header section article {
+    text-align: center;
+    align-items: stretch;
+    padding-inline: 1rem;
+    margin-inline: auto;
+    max-width: 500px;
+    width: 100%;
+    padding-top: 5rem;
+    /* background-color: red; */
+  }
+
   picture {
-    align-self: flex-end;
+    /* background-color: blue; */
+    min-height: auto;
+    position: static;
+  }
+  img {
+    /* background-color: pink; */
+    bottom: 0;
+    width: 70%;
   }
 }
 /* Para manter o padrão coluna em tablets como o Ipad PRO */
-@media screen and (min-height: 55em) {
+/* @media screen and (min-height: 55em) {
   header {
     flex-direction: column;
     min-height: 50vh;
@@ -113,4 +147,4 @@ img {
   picture {
     align-self: center;
   }
-}
+} */
