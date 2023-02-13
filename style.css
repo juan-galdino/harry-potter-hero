@@ -108,29 +108,3 @@ header {
     align-self: flex-end;
   }
 }
-/* @media screen and (min-width: 55em) {
-  header {
-    flex-direction: row;
-    padding-inline-start: 4rem;
-  }
-  article {
-    text-align: start;
-  }
-  picture {
-    align-self: flex-end;
-  }
-} */
-/* Para manter o padrão coluna em tablets como o Ipad PRO */
-/* @media screen and (min-height: 55em) {
-  header {
-    flex-direction: column;
-    min-height: 50vh;
-    padding-inline-start: 0;
-  }
-  article {
-    text-align: center;
-  }
-  picture {
-    align-self: center;
-  }
-} */
