@@ -8,132 +8,118 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* border: 1px solid red; */
 }
 :root {
-  --cor-primaria: hsl(184, 100%, 50%);
+  --cor-primaria: #00f0ff;
 }
 body {
   font-family: 'Nunito', sans-serif;
 }
 header {
   min-height: 100vh;
-  background-image: url('./imagens/header/hogwarts-desktop.png');
-  background-position: center;
+  background-image: url('./imagens/header/img-hogwarts-fundo.png');
   background-size: cover;
-}
-section {
-  display: flex;
-  width: 100%;
-  /* align-items: center; */
-  background-color: hsla(0, 0%, 0%, 0.3);
-  position: relative;
+  background-position: center;
+  background-color: hsl(185, 97%, 15%);
+  color: hsl(0, 0%, 100%);
   overflow: clip;
 }
-article {
+.conteudo {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-top: 10rem;
-  padding-inline: clamp(0rem, 7vw, 8rem);
-  width: 50%;
-  color: hsl(0, 0%, 100%);
-  gap: 1.5rem;
-  position: relative;
-  z-index: 2;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsla(0, 0%, 0%, 0.6);
 }
-h1 {
+.imagem .protagonistas {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  transform: scale(1.04);
+  animation: mudandoTamanho 10s linear infinite;
+}
+.texto {
+  max-width: 30rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.texto h1 {
   font-family: 'HarryP', Times, sans-serif;
   font-weight: 400;
-  font-size: clamp(3rem, 5vw, 4rem);
+  font-size: 3.5rem;
 }
-span {
+.texto span {
   color: var(--cor-primaria);
 }
-p {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  line-height: 1.5;
+.texto p {
+  font-size: 1.2rem;
 }
-a {
+.texto a {
   background-color: var(--cor-primaria);
   padding: 1rem;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  font-weight: 700;
+  font-size: 1.5rem;
   text-decoration: none;
   color: hsl(0, 7%, 8%);
   border-radius: 0.8rem;
   transition: all ease 0.3s;
   text-align: center;
+  font-weight: 700;
 }
-a:hover,
-a:focus {
+.texto a:hover,
+.texto a:focus {
   outline: none;
   filter: brightness(1.03);
   transform: scale(1.04);
   box-shadow: 0 5px 15px var(--cor-primaria);
 }
-a:active {
+.texto a:active {
   filter: brightness(0.8);
   box-shadow: inset 0px 0px 48px 18px var(--cor-primaria);
   box-shadow: 0 5px 15px var(--cor-primaria);
   transform: scale(1);
 }
-picture {
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-}
-img {
-  position: absolute;
-  width: 75%;
-  right: 0;
-  /* animation: mudandoTamanho 10s linear infinite; */
-}
 @keyframes mudandoTamanho {
   0% {
-    transform: scale(1);
+    transform: scale(1.04);
   }
   50% {
     transform: scale(1.1);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.04);
   }
 }
-@media screen and (max-width: 1080px) {
+@media screen and (min-width: 1000px) {
+  .conteudo {
+    flex-direction: row;
+    background-color: hsla(0, 0%, 0%, 0.3);
+  }
+  .texto {
+    text-align: left;
+    padding-inline-start: 5rem;
+  }
+  .imagem {
+    align-self: flex-end;
+  }
+}
+/* @media screen and (min-width: 55em) {
   header {
-    min-height: auto;
+    flex-direction: row;
+    padding-inline-start: 4rem;
   }
-  header section {
-    background-color: hsla(0, 0%, 0%, 0.5);
-    flex-direction: column;
-    min-height: 100vh;
-    /* background-color: blueviolet; */
+  article {
+    text-align: start;
   }
-
-  header section article {
-    text-align: center;
-    align-items: stretch;
-    padding-inline: 1rem;
-    margin-inline: auto;
-    max-width: 500px;
-    width: 100%;
-    padding-top: 5rem;
-    /* background-color: red; */
-  }
-
   picture {
-    /* background-color: blue; */
-    min-height: auto;
-    position: static;
+    align-self: flex-end;
   }
-  img {
-    /* background-color: pink; */
-    bottom: 0;
-    width: 70%;
-  }
-}
+} */
 /* Para manter o padrão coluna em tablets como o Ipad PRO */
 /* @media screen and (min-height: 55em) {
   header {
